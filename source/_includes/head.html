@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %} - {% endif %}{{ site.title }}</title>
+  <meta name="author" content="{{ site.author }}">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
+  <link rel="canonical" href="{{ canonical }}">
+  <link href="{{ root_url }}/favicon.png" type="image/png" rel="icon">
+  <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
+
+  {% include custom/head.html %}
+
+  {% comment %}
+    screen.css is included after custom/head so it can override stuff like Bootstrap fonts etc.
+  {% endcomment %}
+  <link href="{{ root_url }}/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+
+  {% include google_analytics.html %}
+</head>

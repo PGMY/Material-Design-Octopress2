@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse shadow-z-2  navbar-fixed-top" role="navigation">
+    <style type="text/css">body { padding-top: 70px; }</style>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ root_url }}/">{{ site.title }}</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li {% if page.navbar == 'Blog' %}class="active"{% endif %}>
+                    <a rel="index" href="{{ root_url }}/">Blog</a>
+                </li>
+                <li {% if page.navbar == 'Archives' %}class="active"{% endif %}>
+                    <a href="{{ root_url }}/blog/archives">Archives</a>
+                </li>
+            </ul>
+            {% if site.simple_search %}
+                <form class="navbar-form navbar-right control-label form-group form-group-material-indigo-900" action="{{ site.simple_search }}" method="GET">
+                    <input type="hidden" name="sitesearch" value="{{ site.url | shorthand_url }}">
+                    <div class="form-group">
+                        <i class="fa fa-search"></i>
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</nav>

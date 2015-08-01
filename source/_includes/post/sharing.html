@@ -1,0 +1,11 @@
+<div class="sharing">
+  {% if site.twitter_tweet_button %}
+  <a href="https://twitter.com/intent/tweet?text={{ page.description }} via @{{ site.twitter_user }}&url={{ site.url }}{{ page.url }}" class="btn btn-default btn-fab btn-raised shadow-z-1 btn-material-light-blue"><i class="fa fa-twitter"></i></a>
+  {% endif %}
+  {% if site.facebook_share %}
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="btn btn-default btn-fab btn-raised shadow-z-1 btn-material-blue-900"><i class="fa fa-facebook"></i></a>
+  {% endif %}
+  {% if site.google_plus_share %}
+  <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" class="btn btn-default btn-fab btn-raised shadow-z-1 btn-material-red"><i class="fa fa-google-plus"></i></a>
+  {% endif %}
+</div>

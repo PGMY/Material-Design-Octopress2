@@ -1,0 +1,15 @@
+<section class="panel panel-inverse shadow-z-1">
+    <div class="panel-heading">
+      <h3 class="panel-title">About me</h3>
+    </div>
+    <div class="panel-body">
+        {{ site.about }}
+        <p> If you would like to contact or follow me, you can do so below. </p>
+        <div style="text-align: center">
+            <a class="btn btn-sm btn-raised shadow-z-1 btn-material-blue" href="mailto:{{ site.subscribe_email }}"><i class="fa fa-envelope fa-inverse"></i></a>
+            <a class="btn btn-sm btn-raised shadow-z-1 btn-material-grey-900" href="https://github.com/{{ site.github_user }}"><i class="fa fa-github"></i></a>
+            <a class="btn btn-sm btn-raised shadow-z-1 btn-material-light-blue-A400" href="https://twitter.com/{{ site.twitter_user }}"><i class="fa fa-twitter"></i></a>
+            <a class="btn btn-sm btn-raised shadow-z-1 btn-material-orange-A400" href="{{ site.subscribe_rss }}"><i class="fa fa-rss fa-inverse"></i></a>
+        </div>
+    </div>
+</section>
