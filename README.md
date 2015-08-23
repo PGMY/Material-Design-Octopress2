@@ -1,8 +1,11 @@
 #PrettyPress - An Octopress 2.0 theme
 
 * ###Introduction
+
+
     This is a Material Designed Theme for Octopress 2 based on Bootstrap 3 and Material Design Guidelines by Google.
-    #[Demo](https://sonalkeshav.me) 
+    ###[Demo](https://sonalkeshav.me)
+    
 * ###How to Install
     ```bash
     cd octopress
