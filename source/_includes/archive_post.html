@@ -1,10 +1,12 @@
-<div class="panel shadow-z-1">
-    <div class="panel-body">
-        {% capture category %}{{ post.categories | size }}{% endcapture %}
-        <h2 class="post-title" itemprop="name headline"><a href="{{ root_url }}{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h2>
-        <p class="meta text-muted">
-          {% include post/date.html %}{{ time }}
-          {% include post/categories.html %}
-        </p>
-    </div>
+<div class="panel-body btn-default shadow-z-1">
+    <a href="{{ root_url }}{{ post.url }}" itemprop="url" style="text-decoration: none">
+        <div>
+            {% capture category %}{{ post.categories | size }}{% endcapture %}
+            <h2 class="post-title" itemprop="name headline">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</h2>
+            <p class="meta text-muted">
+              {% include post/date.html %}{{ time }}
+              {% include post/categories.html %}
+            </p>
+        </div>
+    </a>
 </div>
