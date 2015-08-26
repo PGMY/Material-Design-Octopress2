@@ -41,11 +41,13 @@ plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
 markdown: rdiscount
-rdiscount:
+rdiscount: 
   extensions:
     - autolink
     - footnotes
     - smart
+    - generate_toc
+  toc_token: "!TOC"
 highlighter: pygments # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
