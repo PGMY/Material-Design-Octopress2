@@ -92,6 +92,9 @@ disqus_show_comment_count:
 # Google Analytics
 google_analytics_tracking_id: 
 
+#chrome color
+chrome_color: 
+
 # Facebook
 facebook_like: true 
 facebook_insights:
