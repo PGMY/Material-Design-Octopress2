@@ -72,6 +72,8 @@
     });
 </script>
 
+{% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{%else%}{{ content | raw_content }}{% endif %}{% endcapture %}
+
 <!-- g+ meta tags -->
     <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
     <meta itemprop="description" content="{{ description | strip_html | condense_spaces | truncate:200 }}"/>
@@ -127,7 +129,7 @@
     <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:200 }}"/>
 
 <!--chrome tab color for android -->
-    <meta name="theme-color" content="{{ site.chrome_color }}">
+    <meta name="theme-color" content="#{{ site.chrome_color }}">
 
 <!-- favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ root_url }}/favicons/apple-touch-icon-57x57.png" />
