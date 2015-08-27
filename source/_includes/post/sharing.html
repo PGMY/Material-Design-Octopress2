@@ -8,4 +8,7 @@
   {% if site.google_plus_share %}
   <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" class="btn btn-default btn-fab btn-raised shadow-z-1 btn-material-red"><i class="fa fa-google-plus"></i></a>
   {% endif %}
+  
+  {% capture url %}{{ site.url}}{{page.url}}{% endcapture %}
+  <a href="{{ url | bitly }}" class="btn btn-default btn-fab btn-raised shadow-z-1 btn-material-blue"><i class="fa fa-link"></i></a>
 </div>
