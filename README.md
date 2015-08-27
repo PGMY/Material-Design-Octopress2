@@ -39,7 +39,7 @@
     * [x] ~~Add support for live tiles on Windows~~
 
 * ###Bugs:
-    * [ ] New page generation with `Rakefile` will result in an error (the new page will be generate but won't have all the necessary defaults)
+    * [ ] New page generation with `Rakefile` will result in an error (the new page will be generated but won't have all the necessary defaults)
 
 * ###PRAISE DUARTE!!!
     ![Matias Duarte](https://i.imgur.com/OvnZeTr.jpg)
