@@ -18,6 +18,17 @@ navbar: Blog
       {% endfor %}
     </div>
 
+    <div class="panel panel-inverse shadow-z-1">
+      <div class="panel-heading">
+        <h3 class="panel-title"><center>404 Page Not Found</center></h3>
+      </div>
+        <div class="panel-body">
+          <img src="https://memecrunch.com/meme/11AKF/sorry-kitten/image.jpg" style="max-width:100%;height:auto;" /> 
+          <h4> This page does not exist.
+          However, it might do so in an alternate universe.</h4>
+        </div>
+      </div>
+
     <ul class="pager">
       {% if paginator.next_page %}
         <li class="previous"><a href="{{paginator.next_page_path}}" class="btn btn-inverse shadow-z-1">&larr;&nbsp;Older</a></li>
