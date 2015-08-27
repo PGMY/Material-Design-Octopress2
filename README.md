@@ -35,7 +35,7 @@
 * ###Pull requests are welcome!
 
 * ###Future Release Features:
-    * [ ] URL shortner integration with services like bit.ly
+    * [x] ~~URL shortner integration with services like bit.ly~~
     * [x] ~~Add support for live tiles on Windows~~
 
 * ###Bugs:
