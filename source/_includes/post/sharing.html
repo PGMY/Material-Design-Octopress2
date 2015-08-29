@@ -10,5 +10,78 @@
   {% endif %}
   
   {% capture url %}{{ site.url}}{{page.url}}{% endcapture %}
-  <a href="{{ url | bitly }}" class="btn btn-default btn-fab btn-raised shadow-z-1 btn-material-blue"><i class="fa fa-link"></i></a>
+  <button type="button" class="btn btn-default btn-fab btn-raised shadow-z-1 btn-material-blue" onclick="main()" id="button"><i class="fa fa-link"></i>
+    <script type="text/javascript">
+      
+      function toastNotification(message) {
+        return new Promise(function  (resolve, reject) {
+          $.snackbar({content: message});
+          resolve(true)
+        })
+      }
+
+      function createHiddenTextField(){
+        return new Promise(function  (resolve, reject) {
+          var button = document.getElementById("button")
+          var div = button.appendChild(document.createElement("div"))
+          div.id = "hiddenTextBoxDiv"
+          var container = document.getElementById("hiddenTextBoxDiv")
+          var input = document.createElement("input")
+          input.id = "inputid"
+          input.text = "text"
+          input.name = "name"
+          input.value = "{{ url | bitly }}"
+          container.appendChild(input)
+          console.log("createHiddenTextField")
+          resolve(true)
+        })
+      } 
+
+      function copyToClipboard() {
+        return new Promise(function  (resolve, reject) {
+          document.getElementById("inputid").select();
+          if (window.getSelection) {
+            text = window.getSelection().toString();
+          } 
+          else if (document.selection && document.selection.type != "Control") {
+            text = document.selection.createRange().text;
+          }
+          try { 
+            resolve(document.execCommand('copy'))
+          } 
+          catch(err) {
+            reject(err)  
+          }  
+        })
+      }
+
+      function deleteHiddenTextField() {
+        return new Promise(function  (resolve, reject) {
+          var container1 = document.getElementById("hiddenTextBoxDiv")
+          container1.remove()
+          console.log("deleteHiddenTextField")
+          resolve(true)
+        })
+      } 
+
+      function main() {
+        createHiddenTextField()
+          .then(function() {
+            return copyToClipboard()
+        })
+          .then(function (err) {
+            if(err==true) {
+              toastNotification('{{url | bitly}} has been copied to your clipboard')
+            }
+            else {
+              toastNotification('Your browser does not support this feature yet!')
+              prompt("You can copy the URL from here, as your browser does not support HTML5 clipboard API yet!", "{{url | bitly}}");
+            }
+          })
+          .then(function () {
+            return deleteHiddenTextField()
+          })
+      }
+    </script>
+  </button>
 </div>
